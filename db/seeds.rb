@@ -1,4 +1,4 @@
-user = User.create!(username: "boss", password: "freak")
+# user = User.create!(username: "boss", password: "freak")
 
 # list = List.create!(user: user, name: "List-Title")
 #

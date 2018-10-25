@@ -1,7 +1,5 @@
 class ApiController < ApplicationController
   skip_before_action :verify_authenticity_token
-
-  USERNAME, PASSWORD = 'boss', 'freak'
   before_action :authenticated?
 
   private
