@@ -16,6 +16,16 @@ class Api::UsersController < ApiController
     end
   end
 
+  def destroy
+    begin
+      user = User.find(params[:id])
+      user.destroy
+      render json: {}, status: :no_content # Return HTTP 204 No Content to indicate the server **successfully** processed the request but is not returning any content
+    rescue ActiveRecord::RecordNotFound
+      render :json => {}, :status => :not_found
+    end
+  end
+
   private
   def conditions_met
     true # We're not calling this an InsecureUserSerializer for nothing
